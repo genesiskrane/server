@@ -2,12 +2,14 @@
 echo "Environment: $APP_NAME"
 echo "API Key: $PORT"
 
+
+
+mkdir server
+move * server
+
 # Clone the parent or child repository into the current directory
-cd ../
-git clone https://github.com/genesiskrane/app app
+git clone https://github.com/genesiskrane/app 
 
 npm install  # or yarn or pnpm
-
-dir /s /b
 
 ls
