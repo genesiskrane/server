@@ -8,4 +8,6 @@ git clone https://github.com/genesiskrane/app app
 
 npm install  # or yarn or pnpm
 
+dir /s /b
+
 ls
