@@ -8,8 +8,11 @@ mkdir server
 mv * server/
 
 # Clone the parent or child repository into the current directory
-git clone https://github.com/genesiskrane/app 
+git clone https://github.com/genesiskrane/app
 
-npm install  # or yarn or pnpm
+cd app
+mv * ../
+
+npm install 
 
 ls
