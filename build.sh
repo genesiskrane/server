@@ -1,18 +1,22 @@
-# Now use the variables
-echo "Environment: $APP_NAME"
-echo "API Key: $PORT"
-
-
-
 mkdir server
-mv * server/
+shopt -s extglob
+mv !(server|node_modules) server/
+
 
 # Clone the parent or child repository into the current directory
-git clone https://github.com/genesiskrane/app
+git clone $REPO_EXT core 
+git clone $REPO_FRONTEND client 
 
-cd app
-mv * ../
+mv core/* .
+rm -rf core
 
 npm install 
 
+cd client 
+npm install
+npx vite build
+
+find . -mindepth 1 ! -name 'dist' ! -path './dist/*' -exec rm -rf {} +
+
+cd ..
 ls
